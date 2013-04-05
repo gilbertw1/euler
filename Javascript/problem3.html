@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <script type="text/javascript">
+        
+        function factors(num, m) {
+            if(num == 0 || num == 1) {
+                return []
+            }
+            
+            var factorArr;
+
+            if(num % m == 0) {
+                factorArr = factors((num/m), m);
+                factorArr.push(m);
+            } else if(Math.sqrt(num) <= m) {
+                factorArr = [num];
+            } else {
+                factorArr = factors(num, m+1);
+            }
+            return factorArr;
+        }
+
+        function isPrime(num) {
+            return factors(num,2).pop() == num;
+        }
+        
+        var compositeNum = 600851475143;
+        var factorArr = factors(compositeNum, 2)
+        document.write(factorArr[0]);
+
+    </script>
+
+</html
