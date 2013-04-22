@@ -37,7 +37,7 @@
 				(cons p (factors (/ n p))))))
 
 (defn power-set [s]
-  (reduce (fn [ss x] (concat ss (map #(conj % x) ss))) [#{}] s))
+  (reduce (fn [ss x] (concat ss (map #(conj % x) ss))) [[]] s))
 
 (defn divisors [x]
 	(->>

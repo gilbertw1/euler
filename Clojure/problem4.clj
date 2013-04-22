@@ -12,9 +12,9 @@
 (defn largest-palindrome []
 	(apply max
 		(for [x problem-set 
-				y problem-set
-				:let [z (* x y)]
-				:when (pal? z)]
+					y problem-set
+					:let [z (* x y)]
+					:when (pal? z)]
 			z)))
 
 (println (largest-palindrome))

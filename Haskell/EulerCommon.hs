@@ -30,7 +30,7 @@ factors n
         | otherwise = p : factors (div n p) where p = ldp n
 
 divisors :: (Integral a) => a -> [a]
-divisors x = delete x (map product (nub (powerset (factors x))))
+divisors x = delete x $ map product $ nub $ powerset $ factors x
 
 powerset :: [a] -> [[a]]
 powerset xs = foldr (\h t->t++map(h:)t) [[]] xs

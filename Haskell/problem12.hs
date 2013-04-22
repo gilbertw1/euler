@@ -16,7 +16,7 @@ inefdivisors x = helper x 1 []
 ---- End Inefficient
 
 numDivisors :: Int -> Int
-numDivisors x = (length (nub (EC.powerset (EC.factors x)))) - 1
+numDivisors x = (length $ nub $ EC.powerset $ EC.factors x) - 1
 
 triangles :: [Int]
 triangles = map (\x -> div (x^2 + x) 2) [1..] 
