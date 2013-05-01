@@ -1,4 +1,4 @@
-(load "euler-common")
+(load-file "euler-common.clj")
 
 (defn sum-primes-below [x]
 	(reduce + (take-while #(< % x) primes)))
